@@ -27,5 +27,5 @@ fusion_bench \
     --config-dir ${SCRIPT_DIR}/config \
     method=dummy \
     modelpool=CLIPVisionModelPool/clip-vit-base-patch32_individual \
-    +modelpool.modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/eurosat_stanford/final_model" \
-    taskpool=clip-vit-single-task_sun397
+    modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/eurosat_stanford/final_model" \
+    taskpool=clip-vit-single-task_eurosat
