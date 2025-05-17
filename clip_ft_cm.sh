@@ -17,12 +17,12 @@ fusion_bench \
     method.batch_size=16 \
     modelpool=clip-finetune_${TASK_12}\
     fabric.devices=1 \
-    fabric.loggers.root_dir=${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME} \
+    fabric.loggers.root_dir=${SCRIPT_DIR}/results/${MODEL_SHORT_NAME} \
     fabric.loggers.name=${TASK_12}
 
 python fusion_bench/fusion_bench/scripts/clip/convert_checkpoint.py \
-    --checkpoint ${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_12}/version_0/checkpoints/step=3999.ckpt \
-    --output ${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_12}/final_model
+    --checkpoint ${SCRIPT_DIR}/results/${MODEL_SHORT_NAME}/${TASK_12}/version_0/checkpoints/step=3999.ckpt \
+    --output ${SCRIPT_DIR}/results/${MODEL_SHORT_NAME}/${TASK_12}/final_model
 
 fusion_bench \
         --config-dir ${SCRIPT_DIR}/config \
@@ -37,8 +37,8 @@ fusion_bench \
         fabric.loggers.name=${TASK_21}
 
 python fusion_bench/fusion_bench/scripts/clip/convert_checkpoint.py \
-    --checkpoint ${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_21}/version_0/checkpoints/step=3999.ckpt \
-    --output ${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_21}/final_model
+    --checkpoint ${SCRIPT_DIR}/results/${MODEL_SHORT_NAME}/${TASK_21}/version_0/checkpoints/step=3999.ckpt \
+    --output ${SCRIPT_DIR}/results/${MODEL_SHORT_NAME}/${TASK_21}/final_model
 
 
 
@@ -46,28 +46,28 @@ fusion_bench \
     --config-dir ${SCRIPT_DIR}/config \
     method=dummy \
     modelpool=CLIPVisionModelPool/clip-vit-base-patch32_individual \
-    modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_12}/final_model" \
+    modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/results/${MODEL_SHORT_NAME}/${TASK_12}/final_model" \
     taskpool=clip-vit-single-task_${TASK_1}
 
 fusion_bench \
     --config-dir ${SCRIPT_DIR}/config \
     method=dummy \
     modelpool=CLIPVisionModelPool/clip-vit-base-patch32_individual \
-    modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_12}/final_model" \
+    modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/results/${MODEL_SHORT_NAME}/${TASK_12}/final_model" \
     taskpool=clip-vit-single-task_${TASK_2}
 
 fusion_bench \
     --config-dir ${SCRIPT_DIR}/config \
     method=dummy \
     modelpool=CLIPVisionModelPool/clip-vit-base-patch32_individual \
-    modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_21}/final_model" \
+    modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/results/${MODEL_SHORT_NAME}/${TASK_21}/final_model" \
     taskpool=clip-vit-single-task_${TASK_1}
 
 fusion_bench \
     --config-dir ${SCRIPT_DIR}/config \
     method=dummy \
     modelpool=CLIPVisionModelPool/clip-vit-base-patch32_individual \
-    modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_21}/final_model" \
+    modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/results/${MODEL_SHORT_NAME}/${TASK_21}/final_model" \
     taskpool=clip-vit-single-task_${TASK_2}
 
 
