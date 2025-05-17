@@ -1,6 +1,5 @@
 _target_: fusion_bench.modelpool.CLIPVisionModelPool
 
-
 base_model: openai/clip-vit-base-patch32 
 
 models:

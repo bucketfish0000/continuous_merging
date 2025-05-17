@@ -26,12 +26,12 @@ python fusion_bench/fusion_bench/scripts/clip/convert_checkpoint.py \
 
 fusion_bench \
         --config-dir ${SCRIPT_DIR}/config \
-        method=classification/${TASK_21} \
+        method=classification/clip_finetune \
         method.num_steps=4000 \
         method.save_interval=2000 \
         method.learning_rate=1e-5 \
         method.batch_size=16 \
-        modelpool=clip-finetune_${TASK+21} \
+        modelpool=clip-finetune_${TASK_21} \
         fabric.devices=1 \
         fabric.loggers.root_dir=${SCRIPT_DIR}/output/${MODEL_SHORT_NAME}/${TASK_21} \
         fabric.loggers.name=${TASK_21}

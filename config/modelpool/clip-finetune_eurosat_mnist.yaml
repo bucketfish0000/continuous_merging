@@ -6,7 +6,7 @@ base_model: openai/clip-vit-base-patch32
 models:
   _pretrained_:
     _target_: transformers.CLIPVisionModel.from_pretrained
-    pretrained_model_name_or_path: tanganke/clip-vit-base-patch32_eurosat
+    pretrained_model_name_or_path: tanganke/clip-vit-base-patch32_euro
 train_datasets:
   mnist:
     _target_: datasets.load_dataset
