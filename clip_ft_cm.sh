@@ -33,7 +33,7 @@ fusion_bench \
         method.batch_size=16 \
         modelpool=clip-finetune_${TASK_21} \
         fabric.devices=1 \
-        fabric.loggers.root_dir=${SCRIPT_DIR}/output/${MODEL_SHORT_NAME} \
+        fabric.loggers.root_dir=${SCRIPT_DIR}/results/${MODEL_SHORT_NAME} \
         fabric.loggers.name=${TASK_21}
 
 python fusion_bench/fusion_bench/scripts/clip/convert_checkpoint.py \
