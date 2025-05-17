@@ -47,28 +47,28 @@ fusion_bench \
     method=dummy \
     modelpool=CLIPVisionModelPool/clip-vit-base-patch32_individual \
     +modelpool.modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_12}/final_model" \
-    taskpool=clip-vit-single-task_${DATA_1}
+    taskpool=clip-vit-single-task_${TASK_1}
 
 fusion_bench \
     --config-dir ${SCRIPT_DIR}/config \
     method=dummy \
     modelpool=CLIPVisionModelPool/clip-vit-base-patch32_individual \
     +modelpool.modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_12}/final_model" \
-    taskpool=clip-vit-single-task_${DATA_2}
+    taskpool=clip-vit-single-task_${TASK_2}
 
 fusion_bench \
     --config-dir ${SCRIPT_DIR}/config \
     method=dummy \
     modelpool=CLIPVisionModelPool/clip-vit-base-patch32_individual \
     +modelpool.modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_21}/final_model" \
-    taskpool=clip-vit-single-task_${DATA_1}
+    taskpool=clip-vit-single-task_${TASK_1}
 
 fusion_bench \
     --config-dir ${SCRIPT_DIR}/config \
     method=dummy \
     modelpool=CLIPVisionModelPool/clip-vit-base-patch32_individual \
     +modelpool.modelpool.models._pretrained_.pretrained_model_name_or_path="${SCRIPT_DIR}/outputs/${MODEL_SHORT_NAME}/${TASK_21}/final_model" \
-    taskpool=clip-vit-single-task_${DATA_2}
+    taskpool=clip-vit-single-task_${TASK_2}
 
 
 
