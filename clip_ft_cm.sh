@@ -6,7 +6,7 @@ TASK_12=eurosat_stanford
 TASK_21=stanford_eurosat
 
 TASK_1=eurosat
-TASK_2=stanford-car
+TASK_2=stanford-cars
 
 fusion_bench \
     --config-dir ${SCRIPT_DIR}/config \
